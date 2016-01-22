@@ -26,7 +26,7 @@
 
 __author__ = "maldevel"
 
-import google, Queue
+import google, Queue, os
 import threading, time, urllib, urllib2
 from core.logger import Logger
 
@@ -119,7 +119,7 @@ class Metagoofil:
             
             # Save links to output to file
             if self.saveLinks:
-                self.f = open('html_links_' + self.get_timestamp() + '.txt', 'a')
+                self.f = open(os.path.join(os.getcwd(), 'results', 'html_links_' + self.get_timestamp() + '_' + self.domain + '.txt'), 'a')
                 for f in self.files:
                     self.f.write(f + "\n")
                 self.f.close()

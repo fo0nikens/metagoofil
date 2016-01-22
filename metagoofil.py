@@ -41,8 +41,12 @@ from core.logger import Logger
  
 if __name__ == "__main__":
     
+    logsDir = os.path.join(os.getcwd(), 'logs')
+    if not os.path.exists(logsDir):
+        os.mkdir(logsDir)
+        
     logger = Logger(args.nolog, args.verbose)
-    
+        
     if not args.domain:
         logger.PrintError("Specify a domain with -d")
         sys.exit()
