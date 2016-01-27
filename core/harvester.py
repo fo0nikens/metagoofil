@@ -49,6 +49,7 @@ class BackgroundWorker(threading.Thread):
                     self.logger.PrintError("File is too large [" + str(size) + " bytes] to download " + url)
                 else:
                     self.logger.Print("Downloading file - [" + str(size) + " bytes] " + url)
+                    print("")
                     filename = str(url.split("/")[-1]) 
                     urllib.urlretrieve(url, self.mg.saveDirectory + "/" + filename)
                     self.mg.totalBytes += size
@@ -115,7 +116,7 @@ class Metagoofil:
             else:
                 self.logger.Print("Results: " + str(len(self.files)) + " ." + filetype + " files found")
                 for f in self.files:
-                    print(f)
+                    self.logger.PrintResult(f)
             
             # Save links to output to file
             if self.saveLinks:

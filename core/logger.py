@@ -48,6 +48,12 @@ class Logger:
         self.Verbose = verbose
         
         
+    def PrintResult(self, value):
+        """print result to terminal"""
+        print('[{}] {}'.format(Green("##"), Green(value)))
+        print('')
+        
+        
     def WriteLog(self, messagetype, message):
         filename = '{}.log'.format(datetime.strftime(datetime.now(), "%Y%m%d"))
         path = os.path.join('.', 'logs', filename)

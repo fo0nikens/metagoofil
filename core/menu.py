@@ -49,7 +49,7 @@ parser = argparse.ArgumentParser(description=banner, formatter_class=RawTextHelp
 parser.add_argument('-d', dest='domain', action='store', help='Domain to search')
 parser.add_argument('-t', dest='fileTypes', action='store', type=csv_list, help='Filetypes to download (pdf,doc,xls,ppt,odp,ods,docx,xlsx,pptx).  To search all 17,576 three-letter file extensions, type "ALL"')
 parser.add_argument('-l', dest='searchMax', action='store', type=int, default=100, help='Maximum results to search (default 100)')
-parser.add_argument('-n', dest='downloadFileLimit', action='store', type=int, help='Maximum number of files to download per filetype')
+parser.add_argument('-n', dest='downloadFileLimit', action='store', type=int, default=100, help='Maximum number of files to download per filetype')
 parser.add_argument('-m', dest='maxDownloadSize', action='store', type=int, default=5000000, help='Max filesize (in bytes) to download (default 5000000)')
 parser.add_argument('-o', dest='saveDirectory', action='store', default=os.path.join(os.getcwd(), 'results'), help='Directory to save downloaded files (default is cwd, ".\results")')
 parser.add_argument('-w', dest='downloadFiles', action='store_true', default=False, help='Download the files, instead of just viewing search results')
