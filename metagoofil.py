@@ -53,10 +53,9 @@ if __name__ == "__main__":
     if not args.fileTypes:
         logger.PrintError("Specify file types with -t")
         sys.exit()
-    if (args.downloadFileLimit > 0) and (args.downloadFiles is False):
-        logger.Print("Adding -w for you")
-        args.downloadFiles = True
     if args.saveDirectory:
+        if args.saveDirectory == os.path.join(os.getcwd(), 'results'):
+            args.saveDirectory = os.path.join(args.saveDirectory, args.domain)
         logger.Print("Downloaded files will be saved here: " + args.saveDirectory)
         if not os.path.exists(args.saveDirectory):
             logger.Print("Creating folder: " + args.saveDirectory)

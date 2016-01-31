@@ -48,7 +48,7 @@ class BackgroundWorker(threading.Thread):
                 if (size > self.mg.maxDownloadSize):
                     self.logger.PrintError("File is too large [" + str(size) + " bytes] to download " + url)
                 else:
-                    self.logger.Print("Downloading file - [" + str(size) + " bytes] " + url)
+                    self.logger.Print("Downloading file [" + str(size) + " bytes] " + url)
                     print("")
                     filename = str(url.split("/")[-1]) 
                     urllib.urlretrieve(url, self.mg.saveDirectory + "/" + filename)
