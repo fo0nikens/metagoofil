@@ -26,7 +26,7 @@
 
 __author__ = "maldevel"
 __twitter__  = "@maldevel"
-__version__ = "3.0"
+__version__ = "3.0.1"
 __year__    = "2016"
 
 from core.logger import Red
